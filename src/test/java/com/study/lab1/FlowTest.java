@@ -5,6 +5,8 @@ import com.study.lab1.model.Account;
 import com.study.lab1.model.Request;
 import com.study.lab1.service.AccountService;
 import org.junit.Test;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
@@ -12,7 +14,9 @@ import static org.junit.Assert.assertFalse;
 public class FlowTest {
     @Test
     public void testSuccessWidthdrawRequest() {
-        RequestHandler requestHandler = new RequestHandler();
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("context.xml");
+
+        RequestHandler requestHandler = applicationContext.getBean(RequestHandler.class);
         AccountService accountService = requestHandler.getAccountService();
 
         // prepare

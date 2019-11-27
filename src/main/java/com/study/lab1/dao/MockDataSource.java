@@ -9,17 +9,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MockDataSource {
-    private List<Account> accounts = new ArrayList<>();
-    private List<User> users = new ArrayList<>();
+    private List<Account> accounts;
+    private List<User> users;
+
+    public void setAccounts(List<Account> accounts) {
+        this.accounts = accounts;
+    }
+
+    public void setUsers(List<User> users) {
+        this.users = users;
+    }
 
     // create some mock data in data source.
     public MockDataSource() {
-        for (int i = 1; i < 5; i++) {
-            double balance = new BigDecimal(1000 * Math.random())
-                    .setScale(2, RoundingMode.UP).doubleValue();
-            accounts.add(new Account(i, balance));
-            users.add(new User(i));
-        }
     }
 
     public void updateAccount(Account account) {

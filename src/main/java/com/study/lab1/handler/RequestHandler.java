@@ -7,7 +7,7 @@ import com.study.lab1.service.AccountService;
 import com.study.lab1.service.RequestValidator;
 
 public class RequestHandler {
-    private AccountService accountService = new AccountService();
+    private AccountService accountService;
     private RequestValidator requestValidator = new RequestValidator();
 
     public void handle(Request request) {
@@ -21,5 +21,13 @@ public class RequestHandler {
 
     public AccountService getAccountService() {
         return accountService;
+    }
+
+    public void setAccountService(AccountService accountService) {
+        this.accountService = accountService;
+    }
+
+    public void setRequestValidator(RequestValidator requestValidator) {
+        this.requestValidator = requestValidator;
     }
 }

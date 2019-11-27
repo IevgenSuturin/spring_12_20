@@ -7,7 +7,11 @@ import com.study.lab1.model.Operation;
 import java.util.Random;
 
 public class AccountService {
-    private AccountDao accountDao = new AccountDao();
+    private AccountDao accountDao;
+
+    public void setAccountDao(AccountDao accountDao) {
+        this.accountDao = accountDao;
+    }
 
     public Account getAccount(long id) {
         return accountDao.get(id);
