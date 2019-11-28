@@ -7,6 +7,7 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class MockDataSource {
     private List<Account> accounts = new ArrayList<>();
@@ -27,6 +28,14 @@ public class MockDataSource {
         if (accountToUpdate != null) {
             accountToUpdate.setBalance(account.getBalance());
         }
+    }
+
+    public List<Account> createAccountCash(){
+        return accounts.stream().collect(Collectors.toList());
+    }
+
+    public List<User> createUserCash(){
+        return users.stream().collect(Collectors.toList());
     }
 
     public Account getAccount(long id) {
