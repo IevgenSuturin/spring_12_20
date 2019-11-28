@@ -5,7 +5,7 @@ import com.study.lab1.model.Request;
 import com.study.lab1.model.User;
 
 public class RequestValidator {
-    private UserDao userDao = new UserDao();
+    private UserDao userDao;
 
     public void validate(Request request) {
         long userId = request.getUserId();
@@ -13,5 +13,9 @@ public class RequestValidator {
         if (user == null) {
             throw new SecurityException("User with id = " + userId + " not found");
         }
+    }
+
+    public void setUserDao(UserDao userDao) {
+        this.userDao = userDao;
     }
 }

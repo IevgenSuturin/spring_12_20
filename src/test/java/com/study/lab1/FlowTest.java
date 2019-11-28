@@ -52,7 +52,9 @@ public class FlowTest {
 
     @Test
     public void testSuccessCounterbalanceRequest() {
-        RequestHandler requestHandler = new RequestHandler();
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("context.xml");
+
+        RequestHandler requestHandler = applicationContext.getBean(RequestHandler.class);
         AccountService accountService = requestHandler.getAccountService();
 
         // prepare

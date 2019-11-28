@@ -13,51 +13,6 @@
     </bean>
 
     <bean id="mockDataSource" class="com.study.lab1.dao.MockDataSource">
-        <property name="accounts">
-            <list>
-                <bean class="com.study.lab1.model.Account">
-                    <constructor-arg value="1"/>
-                    <constructor-arg value="200000"/>
-                </bean>
-                <bean class="com.study.lab1.model.Account">
-                    <constructor-arg value="2"/>
-                    <constructor-arg value="200000"/>
-                </bean>
-                <bean class="com.study.lab1.model.Account">
-                    <constructor-arg value="3"/>
-                    <constructor-arg value="200000"/>
-                </bean>
-                <bean class="com.study.lab1.model.Account">
-                    <constructor-arg value="4"/>
-                    <constructor-arg value="200000"/>
-                </bean>
-                <bean class="com.study.lab1.model.Account">
-                    <constructor-arg value="5"/>
-                    <constructor-arg value="200000"/>
-                </bean>
-            </list>
-        </property>
-        <property name="users">
-            <list>
-                <bean class="com.study.lab1.model.User">
-                    <constructor-arg value="1"/>
-                </bean>
-                <bean class="com.study.lab1.model.User">
-                    <constructor-arg value="2"/>
-                </bean>
-                <bean class="com.study.lab1.model.User">
-                    <constructor-arg value="3"/>
-                </bean>
-                <bean class="com.study.lab1.model.User">
-                    <constructor-arg value="4"/>
-                </bean>
-                <bean class="com.study.lab1.model.User">
-                    <constructor-arg value="5"/>
-                </bean>
-            </list>
-        </property>
     </bean>
-    
-    <bean id="request" class="com.study.lab1.model.Request">
-    </bean>
+
 </beans>

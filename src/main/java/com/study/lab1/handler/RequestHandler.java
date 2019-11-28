@@ -8,7 +8,7 @@ import com.study.lab1.service.RequestValidator;
 
 public class RequestHandler {
     private AccountService accountService;
-    private RequestValidator requestValidator = new RequestValidator();
+    private RequestValidator requestValidator;
 
     public void handle(Request request) {
         requestValidator.validate(request);
