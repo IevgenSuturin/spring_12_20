@@ -9,13 +9,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class MockDataSource {
+public class MockDataSource implements IDataSource {
     private List<Account> accounts = new ArrayList<>();
     private List<User> users = new ArrayList<>();
 
     // create some mock data in data source.
     public MockDataSource() {
-        for (int i = 1; i < 5; i++) {
+        for (Long i = 1L; i < 5L; i++) {
             double balance = new BigDecimal(1000 * Math.random())
                     .setScale(2, RoundingMode.UP).doubleValue();
             accounts.add(new Account(i, balance));
@@ -38,7 +38,8 @@ public class MockDataSource {
         return users.stream().collect(Collectors.toList());
     }
 
-    public Account getAccount(long id) {
+    @Override
+    public Account getAccount(Long id) {
         try {
             // call to datasource take some time :) maybe we should optimize?
             Thread.sleep(generateTimeout());
@@ -49,7 +50,8 @@ public class MockDataSource {
         return copy(account);
     }
 
-    public User getUser(long id) {
+    @Override
+    public User getUser(Long id) {
         try {
             // call to datasource take some time :) maybe we should optimize?
             Thread.sleep(generateTimeout());

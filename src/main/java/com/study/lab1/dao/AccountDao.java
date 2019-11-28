@@ -1,24 +1,17 @@
 package com.study.lab1.dao;
 
 import com.study.lab1.model.Account;
+import com.sun.xml.internal.bind.v2.model.core.ID;
 
 public class AccountDao {
-    private MockDataSource dataSource;
+    private IDataSource dataSource;
 
     public Account get(long id) {
-        long start = System.currentTimeMillis();
         Account account = dataSource.getAccount(id);
-        System.out.println("Getting account took : " + (System.currentTimeMillis() - start));
         return account;
     }
 
-    public void update(Account account) {
-        long start = System.currentTimeMillis();
-        dataSource.updateAccount(account);
-        System.out.println("Updating account took : " + (System.currentTimeMillis() - start));
-    }
-
-    public void setDataSource(MockDataSource dataSource) {
+    public void setDataSource(IDataSource dataSource) {
         this.dataSource = dataSource;
     }
 }

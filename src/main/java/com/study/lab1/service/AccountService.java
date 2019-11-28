@@ -31,8 +31,5 @@ public class AccountService {
             from.setBalance(fromBalance - amountToWidthdraw);
             to.setBalance(toBalance + amountToWidthdraw);
         }
-
-        accountDao.update(from);
-        accountDao.update(to);
     }
 }

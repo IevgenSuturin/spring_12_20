@@ -11,15 +11,11 @@
 		 http://www.springframework.org/schema/context/spring-context.xsd">
 
     <bean id="accountDao" class="com.study.lab1.dao.AccountDao">
-        <property name="dataSource" ref="mockDataSource"/>
-    </bean>
+   </bean>
 
     <bean id="userDao" class="com.study.lab1.dao.UserDao">
-        <property name="dataSource" ref="mockDataSource"/>
     </bean>
 
-    <bean id="mockDataSource" class="com.study.lab1.dao.MockDataSource">
-    </bean>
 
     <bean id="requestHandler" class="com.study.lab1.handler.RequestHandler">
         <property name="accountService" ref="accountService"/>

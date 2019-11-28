@@ -5,9 +5,9 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public class AccountCache {
-    MockDataSource dataSource;
+    IDataSource dataSource;
 
-    public AccountCache(MockDataSource dataSource) {
+    public AccountCache(IDataSource dataSource) {
         this.dataSource = dataSource;
     }
 }
